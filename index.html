@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nebula Blade | Welcome</title>
+  <link rel="icon" type="image/png" href="assets/nav_icon.png">
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="planet-page">
+
+  <!-- BACKGROUND LAYERS -->
+  <div class="space-layer back"></div>
+  <div class="space-layer mid"></div>
+  <div class="space-layer front"></div>
+
+  <header class="nav-bar">
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="assets/nav_icon.png" alt="Nebula Blade Badge" class="nav-logo-img">
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="planets.html">Planets</a>
+        <a href="about.html">About</a>
+        <button id="soundToggle" class="nav-sound-btn">
+        <i id="soundIcon" class="fa-solid fa-volume-high"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="center-wrapper">
+    <!-- STAGE 1: LANDING -->
+    <section id="landing-screen" class="glass-panel intro animate-in">
+      <span class="eyebrow" style="color: #ff4d4d; letter-spacing: 5px;">Sector 7-G // Warning</span>
+      <h1 style="font-size: 3.5rem; margin: 10px 0;">Nebula Blade</h1>
+      <p>A disgraced commander. A fractured galaxy. Rebuild what was lost.</p>
+      <button id="enter-atmosphere" class="glow-btn">Enter Atmosphere</button>
+    </section>
+
+    <!-- STAGE 2: STORY (Hidden by default) -->
+    <section id="story-screen" class="glass-panel story-panel hidden" style="opacity: 0;">
+      <div class="story-header">
+        <span class="eyebrow" style="color: var(--accent);">Archive Decrypted // Log 01</span>
+        <h2 style="font-size: 2rem; margin: 10px 0;">The Fall of the Fleet</h2>
+      </div>
+      <div class="story-content">
+        <p>Once, you ruled the trade routes of the Core. Your word was law.</p>
+        <p>But power breeds envy. A shadow coup stripped your rank and left you for dead.</p>
+        <p><strong style="color: var(--accent);">Now, you have nothing but your blade.</strong> Collect every coin. Rebuild your sanctuary. Reclaim your legacy.</p>
+      </div>
+      <div class="actions">
+        <button id="start-mission" class="glow-btn success">Initialize Mission</button>
+      </div>
+    </section>
+  </main>
+
+  <audio id="bg-music" src="assets/sounds/ambient.mp3" loop></audio>
+  <audio id="clickSound" src="assets/sounds/click.wav"></audio>
+
+  <script src="scripts/audio.js"></script>
+  <script>
+    const landing = document.getElementById('landing-screen');
+    const story = document.getElementById('story-screen');
+    const enterBtn = document.getElementById('enter-atmosphere');
+    const missionBtn = document.getElementById('start-mission');
+    const bgMusic = document.getElementById('bg-music');
+    const clickSound = document.getElementById('clickSound');
+
+    // Transition 1: Landing -> Story
+    enterBtn.addEventListener('click', () => {
+      clickSound.play().catch(()=>{});
+      bgMusic.play().catch(()=>{});
+      
+      landing.classList.add('fade-out');
+      
+      setTimeout(() => {
+        landing.style.display = 'none';
+        story.classList.remove('hidden');
+        story.style.opacity = "1";
+        story.classList.add('animate-in'); // New cinematic slide-in
+      }, 500);
+    });
+
+    // Transition 2: Story -> Planets
+    missionBtn.addEventListener('click', () => {
+      clickSound.play().catch(()=>{});
+      missionBtn.innerText = "ACCESSING CHART...";
+      
+      story.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = "planets.html";
+      }, 600);
+    });
+  </script>
+</body>
+</html>

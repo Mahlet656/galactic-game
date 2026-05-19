@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nebula Blade | Black Market</title>
+  <link rel="icon" type="image/png" href="assets/nav_icon.png">
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="planet-page">
+   
+  <!-- Subtle Back Button -->
+  <a href="planets.html" class="shop-exit">✖ Close Terminal</a>
+
+  <div id="shopNotify" class="notify-bar">
+      <div class="notify-content">
+          <span class="notify-icon">✦</span>
+          <span id="notifyMsg">MODULE INTEGRATED</span>
+      </div>
+      <div class="notify-glow"></div>
+  </div>
+
+  <!-- BACKGROUND LAYERS -->
+  <div class="space-layer back"></div>
+  <div class="space-layer mid"></div>
+  <div class="space-layer front"></div>
+
+ <header class="nav-bar glass">
+  <a href="index.html" class="logo">
+    <img src="assets/nav_icon.png" alt="Nebula Blade Badge" class="nav-logo-img">
+  </a>
+  
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="planets.html">Planets</a>
+    <a href="game.html">Mission</a>
+  </div>
+
+  <!-- Translucent Sound Icon on the right -->
+<button id="soundToggle" class="nav-sound-btn">
+  <i id="soundIcon" class="fa-solid fa-volume-high"></i>
+</button>
+</header>
+
+  <main class="chart-container shop-center">
+    <div class="chart-header">
+    <h1>BLACK MARKET <span class="eyebrow" style="display:inline; font-size: 0.6rem; vertical-align: middle;">// SECTOR 7-G</span></h1>
+  
+  <div class="currency-hud glass">
+    <div class="coin-icon"></div>
+    <div class="coin-info">
+      <label>CREDITS</label>
+      <span id="shopCoins">0</span>
+    </div>
+  </div>
+    </div>
+
+    <!-- HORIZONTAL ITEMS (Centered) -->
+    <div class="shop-wrapper">
+      <div class="planet-row centered-row">
+
+        <!-- HEALTH UPGRADE -->
+        <div class="planet-card glass">
+          <div class="status-tag">Vitality</div>
+          <div class="planet-preview health-img"></div> <!-- Image Slot -->
+          <div class="planet-content">
+            <h2>HEALTH BOOST</h2>
+            <p>Reinforce commander vitality. (+20 Max Health)</p>
+            <button class="planet-btn" onclick="buyUpgrade('health', 50)">Purchase (50)</button>
+          </div>
+        </div>
+
+        <!-- SPEED UPGRADE -->
+        <div class="planet-card glass">
+          <div class="status-tag">Engine</div>
+          <div class="planet-preview speed-img"></div> <!-- Image Slot -->
+          <div class="planet-content">
+            <h2>SPEED BOOST</h2>
+            <p>Optimize movement servos. (Faster Velocity)</p>
+            <button class="planet-btn" onclick="buyUpgrade('speed', 60)">Purchase (60)</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <audio id="bg-music" src="assets/sounds/ambient.mp3" loop></audio>
+  <script src="scripts/audio.js"></script>
+  <script src="scripts/shop.js"></script>
+</body>
+</html>

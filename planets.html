@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nebula Blade | Planetary Chart</title>
+  <link rel="icon" type="image/png" href="assets/nav_icon.png">
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="planet-page">
+
+  <!-- BACKGROUND LAYERS -->
+  <!-- GLOBAL BACKGROUND LAYERS -->
+<div class="space-layer back"></div>   <!-- Constant Stars -->
+<div class="space-layer mid"></div>    <!-- Moving Stars -->
+<div class="space-layer front"></div>  <!-- Static Nebula -->  <!-- Moving -->
+
+  <header class="nav-bar glass">
+  <a href="index.html" class="logo">
+  <img src="assets/nav_icon.png" alt="Nebula Blade Badge" class="nav-logo-img">
+</a>
+  
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="planets.html">Planets</a>
+    <a href="shop.html">Shop</a>
+  </div>
+
+  <!-- Translucent Sound Icon on the right -->
+ <button id="soundToggle" class="nav-sound-btn">
+  <i id="soundIcon" class="fa-solid fa-volume-high"></i>
+</button>
+</header>
+  <main class="chart-container">
+    <div class="chart-header">
+      <h1>PLANETARY CHART</h1>
+      <p class="subtitle">Select a destination to initiate descent</p>
+    </div>
+
+    <!-- Responsive Wrapper -->
+    <div class="planet-row">
+      
+      <!-- EARTH -->
+      <div class="planet-card glass" data-id="earth">
+        <div class="status-tag" id="status-earth">▶ Playable</div>
+        <div class="planet-preview earth-img"></div>
+        <div class="planet-content">
+          <h2>EARTH RUINS</h2>
+          <p>Sector 01: The Beginning</p>
+          <button class="planet-btn" onclick="startPlanet('earth')">DESCENT</button>
+        </div>
+      </div>
+
+      <!-- AETHER -->
+      <div class="planet-card glass locked" data-id="aether">
+        <div class="status-tag" id="status-aether">🔒 Locked</div>
+        <div class="planet-preview aether-img"></div>
+        <div class="planet-content">
+          <h2>AETHER PRIME</h2>
+          <p>Sector 02: High Altitude</p>
+          <button class="planet-btn" disabled onclick="startPlanet('aether')">LOCKED</button>
+        </div>
+      </div>
+
+      <!-- CRYON -->
+      <div class="planet-card glass locked" data-id="cryon">
+        <div class="status-tag" id="status-cryon">🔒 Locked</div>
+        <div class="planet-preview cryon-img"></div>
+        <div class="planet-content">
+          <h2>CRYON ZERO</h2>
+          <p>Sector 03: Final Frontier</p>
+          <button class="planet-btn" disabled onclick="startPlanet('cryon')">LOCKED</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <audio id="bg-music" src="assets/sounds/ambient.mp3" loop></audio>
+  <script src="scripts/audio.js"></script>
+  <script src="scripts/planets.js"></script>
+  <!--<script src="scripts/transitions.js"></script>-->
+  
+</body>
+</html>

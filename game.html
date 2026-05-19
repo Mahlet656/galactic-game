@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nebula Blade | Mission</title>
+  <link rel="icon" type="image/png" href="assets/nav_icon.png"> 
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <!-- GLOBAL BACKGROUND LAYERS -->
+<div class="space-layer back"></div>   
+<div class="space-layer mid"></div>    
+<div class="space-layer front"></div>  
+  <header class="nav-bar">
+  <nav>
+    <!-- LOGO: IMAGE ONLY -->
+    <div class="logo">
+      <img src="assets/nav_icon.png" alt="Rank Badge" class="nav-icon-img">
+    </div>
+
+    <!-- NAVIGATION LINKS & SOUND -->
+    <div class="nav-links">
+      <a href="index.html">Menu</a>
+      <a href="shop.html">Shop</a>
+      <a href="planets.html">Planets</a>
+      
+      <!-- SOUND TOGGLE (Corrected position) -->
+      <button id="soundToggle" class="nav-sound-btn">
+        <i id="soundIcon" class="fa-solid fa-volume-high"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+
+  <main class="game-container">
+    <!-- Added id="world" so we can change themes via JS -->
+    <section id="world" class="game-world earth-theme">
+
+      <!-- PARALLAX LAYERS -->
+      <div class="layer background"></div>
+      <div class="layer midground"></div>
+
+      <!-- PLAYER -->
+      <div id="player" class="player"></div>
+
+      <!-- GAME OBJECTS -->
+      <div class="coin"></div>
+      <div class="enemy"></div>
+
+      <!-- THE GOAL PILLAR (Reaching this wins the level) -->
+      <div id="goal" class="goal-pillar"></div>
+
+      <!-- HUD (In-Game Panel) -->
+      <div class="hud glass-panel">
+       <div>COINS: <span id="coins">0</span> / 100</div>
+       <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.2); margin: 0 15px;"></div>
+       <div>HEALTH: <span id="health">100</span></div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- MISSION COMPLETE SCREEN -->
+<div id="winScreen" class="overlay hidden">
+  <div class="glass-panel modal success-modal">
+    <div class="success-header">
+      <span class="eyebrow cyan-text">Mission Status: Clear</span>
+      <h2 class="success-title">SECTOR SECURED</h2>
+    </div>
+    
+    <div class="story-body">
+      <p>Orbital link established. Navigation data retrieved. You are clear for departure.</p>
+      <div class="stats-grid success-stats">
+        <div class="stat-box">
+          <label>Credits Scavenged</label>
+          <span id="finalCoins" class="value">0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUTTON GROUP -->
+    <div class="modal-actions">
+      <button id="nextLevelBtn" class="btn-cyber success">Return to Orbit</button>
+      <button id="winHomeBtn" class="btn-cyber home">Command Center</button>
+    </div>
+  </div>
+</div>
+
+<!-- MISSION FAILED SCREEN -->
+<div id="loseScreen" class="overlay hidden">
+  <div class="glass-panel modal fail-modal">
+    <div class="fail-header">
+      <span class="eyebrow red-text">System Failure</span>
+      <h2 class="fail-title">MISSION FAILED</h2>
+    </div>
+    
+    <div class="story-body">
+      <p>Vital signs critical. The commander has fallen in hostile territory.</p>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <label>Credits Lost</label>
+          <span id="lostCoins" class="value">0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUTTON GROUP -->
+    <div class="modal-actions">
+      <button id="retryBtn" class="btn-cyber retry">Restart Mission</button>
+      <button id="shopBtn" class="btn-cyber shop">Access Black Market</button>
+      <button id="homeBtn" class="btn-cyber home">Return to Orbit</button>
+    </div>
+  </div>
+</div>
+  <!-- AUDIO -->
+  <audio id="bg-music" src="assets/sounds/ambient.mp3" loop></audio>
+
+  <!--<script src="scripts/transitions.js"></script>-->
+  <script src="scripts/audio.js"></script>
+  <script src="scripts/game.js"></script>
+</body>
+</html>

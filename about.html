@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nebula Blade | Project Archive</title>
+  <link rel="icon" type="image/png" href="assets/nav_icon.png">
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="planet-page">
+
+  <!-- BACKGROUND LAYERS -->
+  <div class="space-layer back"></div>
+  <div class="space-layer mid"></div>
+  <div class="space-layer front"></div>
+
+  <header class="nav-bar">
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="assets/nav_icon.png" alt="Badge" class="nav-logo-img">
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="planets.html">Planets</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html" class="active">Archive</a>
+      </div>
+      <button id="soundToggle" class="nav-sound-btn">
+        <i id="soundIcon" class="fa-solid fa-volume-high"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main class="chart-container">
+    <div class="chart-header">
+      <span class="eyebrow cyan-text">Terminal Access // Archive 01</span>
+      <h1>PROJECT DATA CORE</h1>
+    </div>
+
+    <!-- HORIZONTAL SCROLLABLE DECK -->
+    <div class="archive-deck">
+      
+      <!-- PANEL 1: OVERVIEW -->
+      <section class="glass-panel archive-card">
+        <h2 class="cyan-text">OVERVIEW</h2>
+        <p>A narrative-driven side-scroller built with <strong>DOM Manipulation</strong>. 
+           Demonstrates advanced CSS layering, collision logic, and persistent state management.</p>
+        <div class="tech-list">
+           <span>HTML5</span> <span>CSS3</span> <span>JS ES6</span>
+        </div>
+      </section>
+
+      <!-- PANEL 2: MANUAL -->
+      <section class="glass-panel archive-card">
+        <h2 class="cyan-text">OPERATIONAL MANUAL</h2>
+        <ul class="manual-list">
+          <li>✦ <strong>Movement:</strong> Arrow Keys (L/R)</li>
+          <li>✦ <strong>Combat:</strong> Space or [F] Key</li>
+          <li>✦ <strong>Objective:</strong> Collect 100 Credits to Clear Sector</li>
+          <li>✦ <strong>Logistics:</strong> Visit Black Market for Upgrades</li>
+        </ul>
+      </section>
+
+      <!-- PANEL 3: TEAM -->
+      <section class="glass-panel archive-card">
+        <h2 class="cyan-text">COMMAND CREW</h2>
+        <div class="team-scroll-area">
+          <div class="member"><strong>Siham Tesfaye</strong> <span>UGR/3242/16</span></div>
+          <div class="member"><strong>Rediet Yeshitila</strong> <span>UGR/7887/16</span></div>
+          <div class="member"><strong>Mahlet Wubsera</strong> <span>UGR/7630/16</span></div>
+          <div class="member"><strong>Adonay Abush</strong> <span>UGR/2873/16</span></div>
+          <div class="member"><strong>Loza Demeke</strong> <span>UGR/0050/17</span></div>
+          <div class="member"><strong>Hailemichael Kassaw</strong> <span>UGR/0707/15</span></div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <audio id="bg-music" src="assets/sounds/ambient.mp3" loop></audio>
+  <script src="scripts/audio.js"></script>
+</body>
+</html>
